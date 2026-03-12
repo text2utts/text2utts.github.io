@@ -1,1 +1,2 @@
-THis is the repo to host the audio samples for the ICASSP 2025 for the paper: Everyday Speech in Indian Subcontinent.
+THis is the repo to host CLS map and the audio samples for the INTERSPEECH26 for the paper:Living Among Languages: A Framework for Code-Switching Text-to-Speech
+Synthesis Across Indian Languages
