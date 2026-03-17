@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Geist+Mono:wght@300;400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
- 
+
     :root {
       --bg:     #faf9f7;
       --text:   #1a1916;
@@ -135,7 +135,17 @@
       color: var(--muted);
       letter-spacing: .1em;
       text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .pair-note {
+      font-size: 14px;
+      color: var(--muted);
+      font-style: italic;
+      border-left: 2px solid var(--line);
+      padding-left: 12px;
       margin-bottom: 24px;
+      max-width: 580px;
+      line-height: 1.6;
     }
 
     /* ── Table ── */
@@ -262,25 +272,27 @@
 <main id="mainEl"></main>
 
 <footer>
-  <span>Code-Switching TTS Evaluation</span>
+  <span>Code-Switching TTS Evaluation Samples</span>
   <span>Speaker × Text Language Pairs</span>
 </footer>
 
 <script>
+// Add a `note` field to any pair to show a note below the title.
+// Pairs without a note field show nothing extra.
 const PAIRS = [
   {id:"bengali_hindi",   sp:"Bengali",  tx:"Hindi"   },
   {id:"hindi_punjabi",   sp:"Hindi",    tx:"Punjabi" },
-  {id:"bengali_odia",    sp:"Bengali",  tx:"Odia"    },
-  {id:"konkani_marathi", sp:"Konkani",  tx:"Marathi" },
+  {id:"bengali_odia",    sp:"Bengali",  tx:"Odia",    note:"Toucan TTS failed to produce clear output for Bengali × Odia, hence only 4 systems are available for this pair. (No Sys_5)" },
+  {id:"konkani_marathi", sp:"Konkani",  tx:"Marathi" ,   note:"Sarvam and BharatGen didnot had models for Konkani, hence only 3 systems are available for this pair. (Sys 1 - Proposed, Sys 2 - IndicParlerTTS, Sys 3 -Toucan TTS)" },
   {id:"tamil_telugu",    sp:"Tamil",    tx:"Telugu"  },
-  {id:"nepali_hindi",    sp:"Nepali",   tx:"Hindi"   },
+  {id:"nepali_hindi",    sp:"Nepali",   tx:"Hindi",   note:"Sarvam and BharatGen didnot had models for Nepali, hence only 3 systems are available for this pair. (Sys 1 - Proposed, Sys 2 - IndicParlerTTS, Sys 3 -Toucan TTS)"  },
   {id:"telugu_tamil",    sp:"Telugu",   tx:"Tamil"   },
   {id:"hindi_bengali",   sp:"Hindi",    tx:"Bengali" },
   {id:"odia_bengali",    sp:"Odia",     tx:"Bengali" },
   {id:"hindi_marathi",   sp:"Hindi",    tx:"Marathi" },
   {id:"marathi_hindi",   sp:"Marathi",  tx:"Hindi"   },
   {id:"punjabi_hindi",   sp:"Punjabi",  tx:"Hindi"   },
-  {id:"hindi_nepali",    sp:"Hindi",    tx:"Nepali"  },
+  {id:"hindi_nepali",    sp:"Hindi",    tx:"Nepali" },
   {id:"marathi_konkani", sp:"Marathi",  tx:"Konkani" },
 ];
 
@@ -314,7 +326,8 @@ PAIRS.forEach(p => {
 
   const head = document.createElement("div");
   head.innerHTML = `<div class="pair-title">${p.sp}<span class="sep">×</span>${p.tx}</div>
-    <div class="pair-meta">Speaker · ${p.sp} &nbsp;·&nbsp; Text · ${p.tx}</div>`;
+    <div class="pair-meta">Speaker · ${p.sp} &nbsp;·&nbsp; Text · ${p.tx}</div>
+    ${p.note ? `<div class="pair-note">${p.note}</div>` : ""}`;
   sec.appendChild(head);
 
   const tbl = document.createElement("table");
@@ -386,3 +399,19 @@ secs.forEach(s=>s&&obs.observe(s));
 </script>
 </body>
 </html>
+
+
+<!-- <header>
+  <div class="eyebrow">Code-Switching TTS · Evaluation Samples</div>
+  
+  <h4 class="subtitle">Evaluation samples for paper: <br><b>  </b></h4>
+  <h1><em>Living Among Languages:</em><br>A Framework for Code-Switching Text-to-Speech Synthesis Across Indian Languages</h1>
+  <p class="subtitle">14 language pairs &nbsp;·&nbsp; 5 systems &nbsp;·&nbsp; 5 samples each</p>
+  <div class="legend">
+    <span class="leg">Sys 1 — Sooktam2</span>
+    <span class="leg">Sys 2 — IndicParlerTTS</span>
+    <span class="leg">Sys 3 — Bulbul-V3</span>
+    <span class="leg">Sys 4 — Proposed Framework</span>
+    <span class="leg">Sys 5 — IMS-Toucan TTS</span>
+  </div>
+</header> -->
