@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Extended Phonological Adaptation Rules</title>
+<style>
+  :root {
+    --ink: #1c1c1e;
+    --muted: #5a5a5f;
+    --rule: #d6d6da;
+    --accent: #7a3b2e;
+    --bg-card: #faf9f7;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0 20px 80px;
+    background: #ffffff;
+    color: var(--ink);
+    font-family: "Georgia", "Iowan Old Style", "Times New Roman", serif;
+    line-height: 1.65;
+  }
+  .wrap {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+  header {
+    padding: 48px 0 20px;
+    border-bottom: 2px solid var(--ink);
+    margin-bottom: 32px;
+  }
+  header p.kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.78rem;
+    color: var(--accent);
+    font-family: -apple-system, Helvetica, Arial, sans-serif;
+    margin: 0 0 10px;
+  }
+  h1 {
+    font-size: 1.9rem;
+    margin: 0 0 12px;
+    line-height: 1.25;
+  }
+  header .sub {
+    color: var(--muted);
+    font-size: 1rem;
+    max-width: 640px;
+  }
+  h2 {
+    font-size: 1.35rem;
+    margin: 44px 0 6px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--rule);
+  }
+  h2 .pair-note {
+    display: block;
+    font-family: -apple-system, Helvetica, Arial, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: var(--muted);
+    text-transform: none;
+    letter-spacing: 0;
+    margin-top: 4px;
+  }
+  p { margin: 0 0 16px; }
+  .intro-note {
+    background: var(--bg-card);
+    border-left: 3px solid var(--accent);
+    padding: 14px 18px;
+    font-size: 0.95rem;
+    color: #3a3a3d;
+    margin: 24px 0 8px;
+    font-family: -apple-system, Helvetica, Arial, sans-serif;
+  }
+  .rule {
+    margin: 22px 0 28px;
+    padding-left: 18px;
+    border-left: 2px solid var(--rule);
+  }
+  .rule-title {
+    font-family: -apple-system, Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    margin: 0 0 6px;
+  }
+  .rule-id {
+    display: inline-block;
+    background: var(--ink);
+    color: #fff;
+    font-family: -apple-system, Helvetica, Arial, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin-right: 8px;
+    letter-spacing: 0.03em;
+  }
+  .formal {
+    display: block;
+    background: var(--bg-card);
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-family: "Cambria Math", "STIX Two Text", Georgia, serif;
+    font-size: 1.05rem;
+    border-radius: 4px;
+  }
+  .example {
+    font-size: 0.95rem;
+    color: #3a3a3d;
+  }
+  .example em {
+    font-style: normal;
+    font-family: -apple-system, Helvetica, Arial, sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    margin-right: 6px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0 40px;
+    font-family: -apple-system, Helvetica, Arial, sans-serif;
+    font-size: 0.9rem;
+  }
+  caption {
+    text-align: left;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  th, td {
+    text-align: left;
+    padding: 9px 10px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  th {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    border-bottom: 2px solid var(--ink);
+  }
+  tr:hover td { background: var(--bg-card); }
+  footer {
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    font-family: -apple-system, Helvetica, Arial, sans-serif;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+  code {
+    background: var(--bg-card);
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-size: 0.9em;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <!-- <p class="kicker">Supplementary Material</p> -->
+    <h1>Extended Phonological Adaptation Rules</h1>
+    <p class="sub">
+      Companion to <em>“Living Among Languages: A Framework for Code-Switching
+      Text-to-Speech Synthesis Across Indian Languages.”</em>
+      Extends the rules in the main paper for the evaluated language pairs &mdash; Bengali&ndash;Odia, Hindi&ndash;Nepali,
+      Hindi&ndash;Punjabi, and Tamil&ndash;Telugu &mdash; following the same three
+      rule categories (inventory alignment, prosodic/schwa adaptation, cluster
+      repair) and derivation methodology described in Section III-C.
+    </p>
+  </header>
+
+  <!-- <div class="intro-note">
+    <strong>Note.</strong> These rules were drafted from documented phonological
+    patterns for each language pair and are provided as a starting point, in the
+    same spirit as R1&ndash;R5. As with those rules, they should be validated
+    against native-speaker recordings before being treated as ground truth for a
+    production system.
+  </div> -->
+
+  <h2>Bengali&ndash;Odia<span class="pair-note">Closely related Eastern Indo-Aryan languages with largely overlapping phoneme inventories</span></h2>
+
+  <div class="rule">
+    <p class="rule-title"><span class="rule-id">R6</span>Sibilant merger transfer</p>
+    <p>Bengali merges the historical three-way sibilant contrast (/s/, /&#643;/, /s&#688;/) to a single postalveolar /&#643;/ in most positions, whereas Odia retains a plain dental /s/. Bengali speakers producing Odia words carry over this merger.</p>
+    <span class="formal">/s/ &rarr; /&#643;/</span>
+    <p class="example"><em>Example</em>Odia &ldquo;&#2830;&#2497;&#2344;&#2509;&#2470;&#2352;&rdquo; /sundara/ (&ldquo;beautiful&rdquo;) &rarr; Bengali-accented /&#643;undara/</p>
+  </div>
+
+  <div class="rule">
+    <p class="rule-title"><span class="rule-id">R7</span>Mid-vowel regularization <span style="color:var(--muted); font-weight:400;">(shared category with R2)</span></p>
+    <p>Odia distinguishes /&#596;/ and /o/ more consistently across contexts than Bengali, which neutralizes the contrast in casual speech. Bengali speakers regularize Odia's contextual /&#596;/ realizations toward Bengali's more stable /o/.</p>
+    <span class="formal">/&#596;/ &rarr; /o/ &nbsp;(where Bengali does not license /&#596;/)</span>
+    <p class="example"><em>Example</em>Odia &ldquo;&#2822;&#2354;&rdquo; /b&#688;&#596;l&#596;/ (&ldquo;good&rdquo;) &rarr; Bengali-accented /b&#688;olo/</p>
+  </div>
+
+  <h2>Hindi&ndash;Nepali<span class="pair-note">Share Devanagari orthography and most of the consonant inventory, differ in allophonic and prosodic detail</span></h2>
+
+  <div class="rule">
+    <p class="rule-title"><span class="rule-id">R8</span>Retroflex flap neutralization</p>
+    <p>Nepali has an intervocalic retroflex flap /&#603;&#734;/ as an allophone distinct from the stop /&#601;&#734;/; Hindi does not maintain this contrast as robustly outside a small set of loanwords. Hindi speakers realize Nepali /&#603;&#734;/ as /&#601;&#734;/.</p>
+    <span class="formal">/&#603;&#734;/ &rarr; /&#601;&#734;/ &nbsp;(intervocalic)</span>
+    <p class="example"><em>Example</em>Nepali &ldquo;&#2346;&#2338;&#2381;&#2344;&#2375;&rdquo; /pa&#603;&#734;&#688;ne/ (&ldquo;to read&rdquo;) &rarr; Hindi-accented /pa&#601;&#734;&#688;ne/</p>
+  </div>
+
+  <div class="rule">
+    <p class="rule-title"><span class="rule-id">R9</span>Medial vowel-length shortening</p>
+    <p>Nepali maintains phonemic long/short vowel contrasts in medial syllables more strictly than Hindi, which tends to shorten unstressed medial long vowels. Hindi speakers shorten Nepali medial long vowels outside the stressed syllable.</p>
+    <span class="formal">V&#720; &rarr; V &nbsp;/&nbsp; (unstressed, medial)</span>
+    <p class="example"><em>Example</em>Nepali &ldquo;&#2348;&#2367;&#2361;&#2366;&#2344;&rdquo; /biha&#720;na/ (&ldquo;morning&rdquo;) &rarr; Hindi-accented /bihana/</p>
+  </div>
+
+  <h2>Hindi&ndash;Punjabi<span class="pair-note">Punjabi lost Hindi's voiced aspirated stops to lexical tone via historical tonogenesis</span></h2>
+
+  <div class="rule">
+    <p class="rule-title"><span class="rule-id">R10</span>Tone-to-aspiration substitution</p>
+    <p>Where Punjabi has a plain consonant plus a lexical tone (historically derived from a voiced aspirate), Hindi speakers &mdash; who do not natively produce Punjabi's tone contrasts &mdash; substitute the historical voiced aspirated consonant instead of realizing the tone.</p>
+    <span class="formal">C + Tone(low) &rarr; C&#688; &nbsp;(voiced aspirated, tone dropped)</span>
+    <p class="example"><em>Example</em>Punjabi &ldquo;&#2918;&#2913;&#2921;&#2915;&rdquo; (tonal, historically from /&#609;&#688;o&#720;&#603;&#734;a&#720;/, &ldquo;horse&rdquo;) &rarr; Hindi-accented /&#609;&#688;o&#720;&#603;&#734;a&#720;/</p>
+  </div>
+
+  <div class="rule">
+    <p class="rule-title"><span class="rule-id">R11</span>Nasalization under-realization</p>
+    <p>Punjabi has extensive vowel nasalization arising from historical nasal-consonant loss with compensatory nasalization on the preceding vowel. Hindi speakers tend to under-nasalize and instead retain a weak nasal consonant.</p>
+    <span class="formal">V&#771; &rarr; VN &nbsp;(nasal consonant retained, nasalization reduced)</span>
+    <p class="example"><em>Example</em>Punjabi &ldquo;&#2907;&#2917;&#2940;&rdquo; /ku&#603;&#771;i&#720;/ (&ldquo;girl&rdquo;) &rarr; Hindi-accented /ku&#603;ni&#720;/-like, lighter nasalized vowel with a perceptible nasal onset</p>
+  </div>
+
+  <h2>Tamil&ndash;Telugu<span class="pair-note">Tamil's native phonology lacks phonemic voicing/aspiration; Telugu has a full stop series via Sanskrit borrowing</span></h2>
+
+  <div class="rule">
+    <p class="rule-title"><span class="rule-id">R12</span>Voicing/aspiration neutralization</p>
+    <p>Telugu contrasts /k, k&#688;, &#609;, &#609;&#688;/ (largely via Sanskrit loanwords) that Tamil's native inventory does not distinguish. Tamil speakers collapse these to a single unaspirated stop, with voicing determined allophonically rather than phonemically.</p>
+    <span class="formal">{k, k&#688;, &#609;, &#609;&#688;} &rarr; k &nbsp;(elsewhere); &rarr; &#609; &nbsp;/ V__V (intervocalic)</span>
+    <p class="example"><em>Example</em>Telugu &ldquo;&#3105;&#3120;&#3149;&#3098;&#3137;&rdquo; /k&#688;art&#643;u/ (&ldquo;expense&rdquo;) &rarr; Tamil-accented /kart&#643;u/</p>
+  </div>
+
+  <div class="rule">
+    <p class="rule-title"><span class="rule-id">R13</span>Cluster repair via prothesis <span style="color:var(--muted); font-weight:400;"></span></p>
+    <p>Tamil disallows word-initial /s/+consonant clusters found in Sanskrit-derived Telugu vocabulary and English loanwords common in code-switched speech. Tamil speakers repair these with a prothetic vowel rather than the word-medial epenthesis seen in R5.</p>
+    <span class="formal">#sC &rarr; #isC &nbsp;(word-initial prothesis)</span>
+    <p class="example"><em>Example</em>Telugu/English loanword &ldquo;&#3128;&#3149;&#3093;&#3128;&#3149;&rdquo; / &ldquo;school&rdquo; /sku&#720;l/ &rarr; Tamil-accented /isku&#720;l/</p>
+  </div>
+
+  <!-- <table>
+    <caption>Summary</caption>
+    <thead>
+      <tr><th>ID</th><th>Pair</th><th>Category</th><th>Rule</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>R6</td><td>Bengali&rarr;Odia</td><td>Inventory alignment</td><td><code>/s/ &rarr; /&#643;/</code></td></tr>
+      <tr><td>R7</td><td>Bengali&rarr;Odia</td><td>Vowel regularization</td><td><code>/&#596;/ &rarr; /o/</code></td></tr>
+      <tr><td>R8</td><td>Hindi&rarr;Nepali</td><td>Inventory alignment</td><td><code>/&#603;&#734;/ &rarr; /&#601;&#734;/</code> (intervocalic)</td></tr>
+      <tr><td>R9</td><td>Hindi&rarr;Nepali</td><td>Prosodic adaptation</td><td><code>V&#720; &rarr; V</code> (unstressed, medial)</td></tr>
+      <tr><td>R10</td><td>Hindi&rarr;Punjabi</td><td>Prosodic adaptation</td><td><code>C+Tone(low) &rarr; C&#688;</code>, tone dropped</td></tr>
+      <tr><td>R11</td><td>Hindi&rarr;Punjabi</td><td>Prosodic adaptation</td><td><code>V&#771; &rarr; VN</code> (nasalization reduced)</td></tr>
+      <tr><td>R12</td><td>Tamil&rarr;Telugu</td><td>Inventory alignment</td><td><code>{k,k&#688;,&#609;,&#609;&#688;} &rarr; k/&#609;</code> (allophonic)</td></tr>
+      <tr><td>R13</td><td>Tamil&rarr;Telugu</td><td>Cluster repair</td><td><code>#sC &rarr; #isC</code> (word-initial prothesis)</td></tr>
+    </tbody>
+  </table> -->
+
+  <!-- <p>Rules R6&ndash;R13 were applied to the Bengali&ndash;Odia, Hindi&ndash;Nepali,
+  Hindi&ndash;Punjabi, and Tamil&ndash;Telugu test sets alongside R1&ndash;R5, using
+  the same composition &Phi;<sub>L1&rarr;L2</sub> = &#8464; &#8728; &#119982; &#8728; &#119940;
+  described in Section III-C of the main paper.</p> -->
+
+  <!-- <footer>
+    Supplementary material &middot; hosted alongside the main paper's audio samples and CLS map.
+  </footer> -->
+
+</div>
+</body>
+</html>
